@@ -25,17 +25,22 @@ const ProductDetail = () => {
 
   const handleSelect = (e) => {
     setChoiceSize(e.target.value)
-    console.log(e.target.value)
   }
 
   const navigate = useNavigate()
 
   const addCart = () => {
     console.log(product)
+    console.log(choiceSize)
+    if(!choiceSize) {
+      alert('사이즈를 선택하세요')
+      return
+    }
     const choiceItem = {
       id: product.id,
       title: product.title,
-      price: product.price
+      price: product.price,
+      size: choiceSize
     }
     console.log(choiceItem)
     setCart([...cart, choiceItem])

@@ -39,7 +39,7 @@ const Cart = () => {
     <div className='cart-area'>
       {cart.map((item, index) => (
         <div key={item.id + 100} className='item-card'> 
-          <div onClick={() => moveToDetail(item.id)}>{item.title}</div>
+          <div onClick={() => moveToDetail(item.id)}>{item.title} {item.size}</div>
           <div>{item.price}</div>
           <div onClick={() => deleteItem(item.id, index)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
