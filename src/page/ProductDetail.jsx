@@ -21,6 +21,13 @@ const ProductDetail = () => {
     getProductDetail()
   }, [])
 
+  const [choiceSize, setChoiceSize] = useState("")
+
+  const handleSelect = (e) => {
+    setChoiceSize(e.target.value)
+    console.log(e.target.value)
+  }
+
   const navigate = useNavigate()
 
   const addCart = () => {
@@ -45,9 +52,9 @@ const ProductDetail = () => {
           <div>{product?.title}</div>
           <div>{product?.price}</div>
           <div>
-            <select>
+            <select onChange={handleSelect} value={choiceSize}>
               {product?.size.map((size, index) => (
-                <option key={index} value={size}>{size}</option>
+                <option key={index} value={size} >{size}</option>
               ))}
             </select>
           </div>

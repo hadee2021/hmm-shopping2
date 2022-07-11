@@ -6,7 +6,7 @@
       "title":"무지 흰색티",
       "copy":"www.musinsa.com",
       "price": 25000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":2,
@@ -14,7 +14,7 @@
       "title":"그레이 나팔바지",
       "copy":"www.musinsa.com",
       "price": 18000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":3,
@@ -22,7 +22,7 @@
       "title":"휴양지 패션티",
       "copy":"www.musinsa.com",
       "price": 45000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":4,
@@ -30,7 +30,7 @@
       "title":"기타리스트 패션티",
       "copy":"www.musinsa.com",
       "price": 27000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":5,
@@ -38,7 +38,7 @@
       "title":"여름 나팔바지",
       "copy":"www.musinsa.com",
       "price": 28000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":6,
@@ -46,7 +46,7 @@
       "title":"통풍 슈트",
       "copy":"www.musinsa.com",
       "price": 10000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":7,
@@ -54,7 +54,7 @@
       "title":"무지 멘투맨",
       "copy":"www.musinsa.com",
       "price": 35000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":8,
@@ -62,7 +62,7 @@
       "title":"민트티",
       "copy":"www.musinsa.com",
       "price": 78000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":9,
@@ -70,7 +70,7 @@
       "title":"정장세트",
       "copy":"www.musinsa.com",
       "price": 65000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":10,
@@ -78,7 +78,7 @@
       "title":"흰 반팔티",
       "copy":"www.musinsa.com",
       "price": 58000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     },
     {
       "id":11,
@@ -86,7 +86,7 @@
       "title":"무지 흰색티",
       "copy":"www.musinsa.com",
       "price": 35000,
-      "size":["S","M","L"]
+      "size":["사이즈 선택","S","M","L"]
     }
   ]
 }

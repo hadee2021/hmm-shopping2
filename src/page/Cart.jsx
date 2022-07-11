@@ -26,19 +26,22 @@ const Cart = () => {
     navigate('/')
   }
 
-  const deleteItem = (id) => {
-    const newCart = cart.filter((item) => item.id !== id)
+  const deleteItem = (id, index) => {
+    console.log(index)
+    // const newCart = cart.filter((item) => item.id !== id)
+    const newCart = cart.filter((item,i) => i !== index)
+    console.log(newCart)
     setCart([...newCart])
     console.log(cart)
   }
 
   return (
     <div className='cart-area'>
-      {cart.map((item) => (
+      {cart.map((item, index) => (
         <div key={item.id + 100} className='item-card'> 
           <div onClick={() => moveToDetail(item.id)}>{item.title}</div>
           <div>{item.price}</div>
-          <div onClick={() => deleteItem(item.id)}><FontAwesomeIcon icon={faXmark} /></div>
+          <div onClick={() => deleteItem(item.id, index)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
       ))}
       <div>총가격: {cart.reduce((sum,item) => {
