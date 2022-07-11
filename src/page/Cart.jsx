@@ -26,7 +26,7 @@ const Cart = () => {
     navigate('/')
   }
 
-  const deleteItem = (id, index) => {
+  const deleteItem = (index) => {
     console.log(index)
     // const newCart = cart.filter((item) => item.id !== id)
     const newCart = cart.filter((item,i) => i !== index)
@@ -35,18 +35,25 @@ const Cart = () => {
     console.log(cart)
   }
 
+  const payment = () => {
+    alert('결제완료')
+    setAuthenticate(!authenticate)
+    setCart([])
+  }
+
   return (
     <div className='cart-area'>
       {cart.map((item, index) => (
-        <div key={item.id + 100} className='item-card'> 
+        <div key={item.id + index} className='item-card'> 
           <div onClick={() => moveToDetail(item.id)}>{item.title} {item.size}</div>
           <div>{item.price}</div>
-          <div onClick={() => deleteItem(item.id, index)}><FontAwesomeIcon icon={faXmark} /></div>
+          <div onClick={() => deleteItem(index)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
       ))}
-      <div>총가격: {cart.reduce((sum,item) => {
+      <div className='total-price'>총가격: {cart.reduce((sum,item) => {
         return sum + item.price
-      },0)}</div>
+      },0)} 원</div>
+      <div className='payment' onClick={payment}>결제하기</div>
     </div>
   )
 }
