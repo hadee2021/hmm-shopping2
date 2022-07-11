@@ -123,6 +123,10 @@
   cursor: pointer;
 }
 
+.product-detail-data select {
+  outline: none;
+}
+
 .cart-area {
   width: 88%;
   /* border: 1px solid; */
