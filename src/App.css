@@ -3,13 +3,16 @@
   background-color: white;
   width: 100%;
 }
+.nav-bar-auth {
+  background-color: white;
+}
 .product-all-container {
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
 .product-all {
-  padding-top: 200px;
+  padding-top: 230px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -44,7 +47,8 @@
 .login-button {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  padding-top: 10px;
   margin-right: 30px;
   cursor: pointer;
 }

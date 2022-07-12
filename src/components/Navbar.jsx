@@ -39,7 +39,7 @@ const Navbar = () => {
   }
   const {pathname} = useLocation()
   return (
-    <div className={pathname === '/' ? 'nav-bar nav-bar-padding' : ''}>
+    <div className={pathname === '/' ? 'nav-bar nav-bar-padding' : 'nav-bar-auth'}>
       <div>
         <div className='login-button' onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
