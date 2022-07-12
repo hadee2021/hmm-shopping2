@@ -17,6 +17,7 @@ const Cart = () => {
 
   console.log(authenticate)
   console.log(cart)
+  console.log(cart.length)
   const navigate = useNavigate()
   const moveToDetail = (id) => {
     navigate(`/product/${id}`)

@@ -5,10 +5,11 @@ import { faSearch, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 
 import { useRecoilState } from 'recoil'
-import { authenticateAtom } from '../Atom'
+import { authenticateAtom, cartAtom } from '../Atom'
 
 const Navbar = () => {
   const[authenticate, setAuthenticate] = useRecoilState(authenticateAtom)
+  const[cart] = useRecoilState(cartAtom)
 
   const menuList = [
     '여성',
@@ -44,7 +45,7 @@ const Navbar = () => {
         <div className='login-button' onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
         <div>{authenticate ? '로그아웃' :'로그인'}</div>
-        {authenticate && <Link to='/cart' className='link-style'> <FontAwesomeIcon icon={faCartShopping} />장바구니</Link>}
+        {authenticate && <Link to='/cart' className='link-style'> <FontAwesomeIcon icon={faCartShopping} />장바구니 {cart.length}</Link>}
         </div>
       </div>
       <div className='nav-section'>
