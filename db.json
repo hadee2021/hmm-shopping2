@@ -10,7 +10,7 @@
     },
     {
       "id":2,
-      "img":"/PIC/002.png",
+      "img":"/PIC/008.png",
       "title":"그레이 나팔바지",
       "copy":"www.musinsa.com",
       "price": 18000,
@@ -86,6 +86,14 @@
       "title":"무지 흰색티",
       "copy":"www.musinsa.com",
       "price": 35000,
+      "size":["사이즈 선택","S","M","L"]
+    },
+    {
+      "id":12,
+      "img":"/PIC/001.png",
+      "title":"무지 흰색티",
+      "copy":"www.musinsa.com",
+      "price": 25000,
       "size":["사이즈 선택","S","M","L"]
     }
   ]

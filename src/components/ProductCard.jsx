@@ -10,7 +10,7 @@ const ProductCard = ({item}) => {
     <div className='product-card' onClick={showDetail}>
       <img src={item?.img} />
       <div>{item?.title}</div>
-      <div>{item?.price} 원</div>
+      <div>₩ {item?.price}</div>
     </div>
   )
 }

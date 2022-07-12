@@ -23,7 +23,7 @@ const ProductAll = () => {
   }, [query])
 
   return (
-    <div>
+    <div className='product-all-container'>
       <div className='product-all'>
         {productList.map((menu) => (
           <div key={menu.id} className='flex-center'>

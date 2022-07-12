@@ -27,16 +27,12 @@ const Cart = () => {
   }
 
   const deleteItem = (index) => {
-    console.log(index)
-    // const newCart = cart.filter((item) => item.id !== id)
     const newCart = cart.filter((item,i) => i !== index)
-    console.log(newCart)
     setCart([...newCart])
-    console.log(cart)
   }
 
   const payment = () => {
-    alert('결제완료')
+    alert('결제완료!! 감사합니다')
     setAuthenticate(!authenticate)
     setCart([])
   }
@@ -50,9 +46,11 @@ const Cart = () => {
           <div onClick={() => deleteItem(index)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
       ))}
-      <div className='total-price'>총가격: {cart.reduce((sum,item) => {
+      <div className='total-price'>
+        총가격: <span> {cart.reduce((sum,item) => {
         return sum + item.price
-      },0)} 원</div>
+        },0)} </span> 원
+      </div>
       <div className='payment' onClick={payment}>결제하기</div>
     </div>
   )
