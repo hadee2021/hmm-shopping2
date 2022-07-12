@@ -55,7 +55,7 @@ const ProductDetail = () => {
       <div>
         <div className='product-detail-data'>
           <div>{product?.title}</div>
-          <div>{product?.price} 원</div>
+          <div>₩ {product?.price} </div>
           <div>
             <select onChange={handleSelect} value={choiceSize}>
               {product?.size.map((size, index) => (

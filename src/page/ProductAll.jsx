@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
 import { useSearchParams } from 'react-router-dom'
-import Footer from '../components/Footer'
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([])
@@ -31,7 +30,6 @@ const ProductAll = () => {
           </div>
         ))}
       </div>
-      <Footer />
     </div>
   )
 }
