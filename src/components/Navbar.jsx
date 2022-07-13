@@ -45,7 +45,11 @@ const Navbar = () => {
         <div className='login-button' onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
         <div>{authenticate ? '로그아웃' :'로그인'}</div>
-        {authenticate && <Link to='/cart' className='link-style'> <FontAwesomeIcon icon={faCartShopping} />장바구니 {cart.length}</Link>}
+        {authenticate && 
+          <Link to='/cart' className='link-style cart-link-style'> 
+            <FontAwesomeIcon icon={faCartShopping} className='cart-icon' />장바구니 <div className='cart-count'>{cart.length}</div> 
+          </Link>
+        }
         </div>
       </div>
       <div className='nav-section'>

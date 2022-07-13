@@ -36,13 +36,28 @@
 }
 
 .product-card > img:hover {
-  outline: 3px solid skyblue;
+  outline: 3px solid #00acee;
 }
 
 .link-style {
   color: black;
   text-decoration: none;
   margin-left: 35px;
+}
+.cart-link-style {
+  display: flex;
+}
+.cart-icon {
+  padding-top: 3px;
+}
+.cart-count {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  background-color: rgba(0, 172, 238,0.8);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
 }
 .login-button {
   display: flex;
@@ -149,6 +164,10 @@
   outline: none;
 }
 
+.product-detail-count {
+  width: 50px;
+}
+
 .cart-area {
   width: 88%;
   /* border: 1px solid; */
@@ -209,6 +228,7 @@
 
 .payment:hover {
   box-shadow: inset 4px 3px 2px 1px lightblue;
+  color: black;
 }
 
 

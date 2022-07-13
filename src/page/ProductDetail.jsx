@@ -22,27 +22,35 @@ const ProductDetail = () => {
   }, [])
 
   const [choiceSize, setChoiceSize] = useState("")
+  const [choiceCount, setChoiceCount] = useState(1)
 
   const handleSelect = (e) => {
     setChoiceSize(e.target.value)
   }
 
+  const handleCount = (e) => {
+    setChoiceCount(Number(e.target.value))
+  }
+
   const navigate = useNavigate()
 
   const addCart = () => {
-    console.log(product)
-    console.log(choiceSize)
     if(!choiceSize) {
       alert('사이즈를 선택하세요')
       return
     }
+    else if(choiceCount < 1) {
+      alert('수량은 1개 이상 가능합니다')
+      return
+    }
     const choiceItem = {
       id: product.id,
+      idTime: new Date(),
       title: product.title,
       price: product.price,
-      size: choiceSize
+      size: choiceSize,
+      count: choiceCount
     }
-    console.log(choiceItem)
     setCart([...cart, choiceItem])
     alert(`${product?.title} 추가 되었습니다`)
     navigate('/')
@@ -62,6 +70,9 @@ const ProductDetail = () => {
                 <option key={index} value={size} >{size}</option>
               ))}
             </select>
+          </div>
+          <div>
+            수량: <input type='number' className='product-detail-count' value={choiceCount} onChange={handleCount}/>
           </div>
           <div onClick={addCart}>추가</div>
         </div>

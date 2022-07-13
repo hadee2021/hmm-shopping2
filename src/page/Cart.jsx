@@ -5,19 +5,27 @@ import { useRecoilState } from 'recoil'
 import { authenticateAtom, cartAtom } from '../Atom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 // import Item from '../components/Item'
 
 const Cart = () => {
   const[authenticate, setAuthenticate] = useRecoilState(authenticateAtom)
   const[cart, setCart] = useRecoilState(cartAtom)
+  const[totalPrice, setTotalPrice] = useState(0)
+  console.log(cart)
 
   useEffect(() => {
     setAuthenticate(!authenticate)
   },[])
 
-  console.log(authenticate)
-  console.log(cart)
-  console.log(cart.length)
+  useEffect(() => {
+    let total = cart.reduce((sum,item) => {
+      return sum + (item.price * item.count)
+    },0)
+    setTotalPrice(total)
+  },[cart])
+
+  
   const navigate = useNavigate()
   const moveToDetail = (id) => {
     navigate(`/product/${id}`)
@@ -27,8 +35,9 @@ const Cart = () => {
     navigate('/')
   }
 
-  const deleteItem = (index) => {
-    const newCart = cart.filter((item,i) => i !== index)
+  const deleteItem = (idTime) => {
+    console.log(idTime)
+    const newCart = cart.filter((item) => item.idTime !== idTime)
     setCart([...newCart])
   }
 
@@ -40,17 +49,16 @@ const Cart = () => {
 
   return (
     <div className='cart-area'>
-      {cart.map((item, index) => (
-        <div key={item.id + index} className='item-card'> 
+      {cart.map((item) => (
+        <div key={item.idTime} className='item-card'> 
           <div onClick={() => moveToDetail(item.id)}>{item.title} {item.size}</div>
+          <div>{item.count}개</div>
           <div>{item.price}</div>
-          <div onClick={() => deleteItem(index)}><FontAwesomeIcon icon={faXmark} /></div>
+          <div onClick={() => deleteItem(item.idTime)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
       ))}
       <div className='total-price'>
-        총가격: <span> {cart.reduce((sum,item) => {
-        return sum + item.price
-        },0)} </span> 원
+        총가격: <span>{totalPrice}</span> 원 
       </div>
       <div className='payment' onClick={payment}>결제하기</div>
     </div>
