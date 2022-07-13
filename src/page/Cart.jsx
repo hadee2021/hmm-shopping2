@@ -6,7 +6,6 @@ import { authenticateAtom, cartAtom } from '../Atom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-// import Item from '../components/Item'
 
 const Cart = () => {
   const[authenticate, setAuthenticate] = useRecoilState(authenticateAtom)
@@ -42,7 +41,7 @@ const Cart = () => {
   }
 
   const payment = () => {
-    alert('결제완료!! 감사합니다')
+    alert(`총 ${totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원 결제완료!! 감사합니다`)
     setAuthenticate(!authenticate)
     setCart([])
   }
@@ -58,7 +57,7 @@ const Cart = () => {
         </div>
       ))}
       <div className='total-price'>
-        총가격: <span>{totalPrice}</span> 원 
+        총가격: <span>{totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span> 원 
       </div>
       <div className='payment' onClick={payment}>결제하기</div>
     </div>
