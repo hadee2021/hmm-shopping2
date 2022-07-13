@@ -50,14 +50,14 @@ const Cart = () => {
     <div className='cart-area'>
       {cart.map((item) => (
         <div key={item.idTime} className='item-card'> 
-          <div onClick={() => moveToDetail(item.id)}>{item.title} {item.size}</div>
+          <div onClick={() => moveToDetail(item.id)}><span>{item.title} {item.size}</span></div>
           <div>{item.count}개</div>
           <div>{item.price}</div>
           <div onClick={() => deleteItem(item.idTime)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
       ))}
       <div className='total-price'>
-        총가격: <span>{totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span> 원 
+        총가격: <span>{totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span> 원
       </div>
       <div className='payment' onClick={payment}>결제하기</div>
     </div>
