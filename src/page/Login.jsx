@@ -30,7 +30,7 @@ const Login = () => {
     setEmail(e.target.value)
   }
 
-  const[showPassword, setShowPassword] = useState(true)
+  const[showPassword, setShowPassword] = useState(false)
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
   }
