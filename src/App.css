@@ -120,7 +120,7 @@
 }
 
 .login-input {
-  width: 200px;
+  width: 300px;
   display: flex;
   flex-flow: column;
   margin-bottom: 13px;
@@ -138,20 +138,24 @@
   margin-top: 25px;
 }
 
-.product-detail div:last-child {
+.product-detail > div:last-child {
   flex-basis: 395px;
-  margin-left: 10px;
+  margin-left: 35px;
 }
 
-.product-detail-data div {
+.product-detail-data > div {
   margin-top: 50px;
 }
 
-.product-detail-data div:first-child {
+.product-detail-data > div:first-child {
   font-weight: bolder;
 }
 
-.product-detail-data div:last-child {
+.product-detail-data > div:nth-child(2) {
+  font-size: 25px;
+}
+
+.product-detail-data-add{
   text-align: center;
   background-color: black;
   color: white;

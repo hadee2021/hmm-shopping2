@@ -4,6 +4,10 @@ import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import { cartAtom } from '../Atom'
+import {
+  TextField,
+  MenuItem
+} from '@mui/material'
 
 const ProductDetail = () => {
   const[cart, setCart] = useRecoilState(cartAtom)
@@ -65,16 +69,41 @@ const ProductDetail = () => {
           <div>{product?.title}</div>
           <div>₩ {product?.price} </div>
           <div>
-            <select onChange={handleSelect} value={choiceSize}>
+            <TextField
+              id="outlined-select-currency"
+              select
+              label="Size"
+              value={choiceSize}
+              onChange={handleSelect}
+              helperText="사이즈를 선택하세요"
+              size='small'
+              sx={{margin: 0}}
+            >
               {product?.size.map((size, index) => (
-                <option key={index} value={size} >{size}</option>
+                <MenuItem key={index} value={size}>
+                  {size}
+                </MenuItem>
               ))}
-            </select>
+            </TextField>
           </div>
           <div>
-            수량: <input type='number' className='product-detail-count' value={choiceCount} onChange={handleCount}/>
+            {/* 수량: <input type='number' className='product-detail-count' value={choiceCount} onChange={handleCount}/> */}
+            <TextField
+              id="standard-number"
+              label="수량"
+              type="number"
+              className='product-detail-count'
+              size='medium'
+              value={choiceCount}
+              onChange={handleCount}
+              sx= {{width: '100px'}}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="standard"
+            />
           </div>
-          <div onClick={addCart}>추가</div>
+          <div className='product-detail-data-add' onClick={addCart}>추가</div>
         </div>
       </div>
     </div>

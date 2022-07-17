@@ -52,7 +52,7 @@ const Cart = () => {
         <div key={item.idTime} className='item-card'> 
           <div onClick={() => moveToDetail(item.id)}><span>{item.title} {item.size}</span></div>
           <div>{item.count}개</div>
-          <div>{item.price}</div>
+          <div>{item.price}원</div>
           <div onClick={() => deleteItem(item.idTime)}><FontAwesomeIcon icon={faXmark} /></div>
         </div>
       ))}

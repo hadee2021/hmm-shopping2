@@ -1,11 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faSearch, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 
 import { useRecoilState } from 'recoil'
 import { authenticateAtom, cartAtom } from '../Atom'
+import { TextField } from '@mui/material'
 
 const Navbar = () => {
   const[authenticate, setAuthenticate] = useRecoilState(authenticateAtom)
@@ -64,8 +65,14 @@ const Navbar = () => {
         <div className='search-input-space hide'></div>
         <div className='search-input-div'>
           <div>
-            <FontAwesomeIcon icon={faSearch} />
-            <input type='text' onKeyPress={(event) => search(event)} placeholder='제품검색 (Enter)' className='search-input' />
+            <TextField
+              id="standard-search"
+              label="제품검색 (Enter)"
+              type="search"
+              variant="standard"
+              onKeyPress={(event) => search(event)}
+              className='search-input'
+            />
           </div>
         </div>
       </div>
