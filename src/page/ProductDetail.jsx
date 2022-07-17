@@ -47,6 +47,10 @@ const ProductDetail = () => {
       alert('수량은 1개 이상 가능합니다')
       return
     }
+    else if(!Number.isInteger(choiceCount)) {
+      alert('수량은 정수만 가능 합니다')
+      return
+    }
     const choiceItem = {
       id: product.id,
       idTime: new Date(),
