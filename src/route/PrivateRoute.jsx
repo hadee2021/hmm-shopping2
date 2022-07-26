@@ -8,7 +8,7 @@ import { authenticateAtom } from '../Atom'
 const PrivateRoute = () => {
   const[authenticate] = useRecoilState(authenticateAtom)
   return (
-    authenticate === true ? <ProductDetail/> : <Navigate to='/login' />
+    authenticate === true ? <ProductDetail/> : <Navigate to="/login" />
   )
 }
 

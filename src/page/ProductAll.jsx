@@ -21,13 +21,15 @@ const ProductAll = () => {
   }, [query])
 
   return (
-    <div className='product-all-container'>
-      <div className='product-all'>
-        {productList.map((menu) => (
-          <div key={menu.id} className='flex-center'>
-            <ProductCard  item={menu} />
-          </div>
-        ))}
+    <div>
+      <div className="product-all-container">
+        <div className="product-all">
+          {productList.map((menu) => (
+            <div key={menu.id} className="flex-center">
+              <ProductCard  item={menu} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

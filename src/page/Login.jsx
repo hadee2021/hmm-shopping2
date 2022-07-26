@@ -48,14 +48,14 @@ const Login = () => {
   }
 
   return (
-    <div className='login-area'>
+    <div className="login-area">
       <form onSubmit={(event) => loginUser(event)}>
-        <Paper elevation={5} className='login-input'>
+        <Paper elevation={5} className="login-input">
           <Box
             sx= {{
-              display: 'flex',
-              flexFlow: 'column',
-              padding: '15px 20px'
+              display: "flex",
+              flexFlow: "column",
+              padding: "15px 20px"
             }}
           >
             <Typography component="h1" variant="h5">
@@ -64,18 +64,21 @@ const Login = () => {
             <TextField 
               label="이메일" 
               name="email" 
-              margin='normal'
+              margin="normal"
               required 
               fullWidth
               size="small"
-              autoComplete='email'
+              autoComplete="email"
               value={email}
               onChange={handleEmail}
             />
-            <FormControl sx={{ m: 1, width: '30ch', margin: '8px 0' }} variant="outlined" required >
+            <FormControl 
+              sx={{ m: 1, width: "30ch", margin: "8px 0" }} 
+              variant="outlined" 
+              required 
+            >
               <InputLabel 
                 htmlFor="outlined-adornment-password" 
-                
               >
                 비밀번호
               </InputLabel>
@@ -97,11 +100,13 @@ const Login = () => {
                 label="Password"
               />
             </FormControl>
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="비밀번호 저장"
-            />
-            <Button variant='contained' type="submit" sx={{mt:3, mb: 2}}>로그인</Button>
+            <Button 
+              variant='contained' 
+              type="submit" 
+              sx={{mt:3, mb: 2}}
+            >
+              로그인
+            </Button>
           </Box>
         </Paper>
       </form>

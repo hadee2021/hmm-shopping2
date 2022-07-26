@@ -9,3 +9,8 @@ export const cartAtom = atom({
   key: 'cart',
   default: [],
 })
+
+export const loadingAtiom = atom({
+  key: 'loading',
+  default: true,
+})

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
-
 import { useRecoilState } from 'recoil'
 import { authenticateAtom, cartAtom } from '../Atom'
 import { TextField } from '@mui/material'
@@ -41,29 +40,31 @@ const Navbar = () => {
   }
   const {pathname} = useLocation()
   return (
-    <div className={pathname === '/' ? 'nav-bar nav-bar-padding' : 'nav-bar-auth'}>
+    <div className={pathname === "/" ? "nav-bar nav-bar-padding" : "nav-bar-auth"}>
       <div>
-        <div className='login-button' onClick={goToLogin}>
+        <div className="login-button" onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
-        <div>{authenticate ? '로그아웃' :'로그인'}</div>
-        {authenticate && 
-          <Link to='/cart' className='link-style cart-link-style'> 
-            <FontAwesomeIcon icon={faCartShopping} className='cart-icon' />장바구니 <div className='cart-count'>{cart.length}</div> 
-          </Link>
-        }
+          <div>{authenticate ? "로그아웃" :"로그인"}</div>
+          {authenticate && 
+            <Link to="/cart" className="link-style cart-link-style"> 
+              <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
+              <span>장바구니</span> 
+              <div className="cart-count">{cart.length}</div> 
+            </Link>
+          }
         </div>
       </div>
-      <div className='nav-section'>
-        <img width={100} src='/PIC/로고2.png' onClick={() => navigte('/')} />
+      <div className="nav-section">
+        <img width={100} src="/PIC/로고2.png" onClick={() => navigte("/")} />
       </div>
-      <div className='menu-area'>
-        <ul className='menu-list hide'>
+      <div className="menu-area">
+        <ul className="menu-list hide">
           {menuList.map((menu, index) => (
             <li key={index}>{menu}</li>
           ))}
         </ul>
-        <div className='search-input-space hide'></div>
-        <div className='search-input-div'>
+        <div className="search-input-space hide"></div>
+        <div className="search-input-div">
           <div>
             <TextField
               id="standard-search"
@@ -71,7 +72,7 @@ const Navbar = () => {
               type="search"
               variant="standard"
               onKeyPress={(event) => search(event)}
-              className='search-input'
+              className="search-input"
             />
           </div>
         </div>

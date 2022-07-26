@@ -11,10 +11,10 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path='/' element={<ProductAll />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/product/:id' element={<PrivateRoute />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path="/" element={<ProductAll />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/product/:id" element={<PrivateRoute />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   )
