@@ -1,7 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import { authenticateAtom, cartAtom } from '../Atom'
@@ -43,12 +42,12 @@ const Navbar = () => {
     <div className={pathname === "/" ? "nav-bar nav-bar-padding" : "nav-bar-auth"}>
       <div>
         <div className="login-button" onClick={goToLogin}>
-          <FontAwesomeIcon icon={faUser} />
+          <FontAwesomeIcon icon={faUser} className="user-icon" />
           <div>{authenticate ? "로그아웃" :"로그인"}</div>
           {authenticate && 
             <Link to="/cart" className="link-style cart-link-style"> 
               <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
-              <span>장바구니</span> 
+              <span className="cart-span">장바구니</span> 
               <div className="cart-count">{cart.length}</div> 
             </Link>
           }

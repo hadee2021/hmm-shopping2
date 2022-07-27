@@ -6,8 +6,6 @@ import { authenticateAtom } from '../Atom'
 import { 
   TextField,
   Button,
-  FormControlLabel,
-  Checkbox,
   Paper,
   Box,
   Typography,
@@ -79,6 +77,7 @@ const Login = () => {
             >
               <InputLabel 
                 htmlFor="outlined-adornment-password" 
+                sx={{ marginBottom: "10px"}}
               >
                 비밀번호
               </InputLabel>
