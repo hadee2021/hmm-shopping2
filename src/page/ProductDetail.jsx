@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import { cartAtom } from '../Atom'
-import { TextField, MenuItem } from '@mui/material'
+import { TextField, MenuItem, Skeleton, Box } from '@mui/material'
 
 const ProductDetail = () => {
   const[cart, setCart] = useRecoilState(cartAtom)
@@ -62,12 +62,28 @@ const ProductDetail = () => {
   return (
     <div className="product-detail">
       <div>
-        <img src={product?.img} />
+        {product?.img ? (
+          <img src={product?.img} />
+        ) : (
+          <Skeleton variant="rectangular" width={640} height={960} />
+        )}
       </div>
       <div>
         <div className="product-detail-data">
-          <div>{product?.title}</div>
-          <div>₩ {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} </div>
+          {product?.title ? (
+            <div>{product?.title}</div>
+          ) : (
+            <Box sx={{ pt: 0.5 }}>
+              <Skeleton variant="rectangular" width={100} height={21}/>
+            </Box>
+          )}
+          {product?.price ? (
+            <div>₩ {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} </div>
+            ) : (
+              <Box sx={{ pt: 0.5 }}>
+                <Skeleton variant="rectangular" width={100} height={33}/>
+              </Box>
+            )}
           <div>
             <TextField
               id="outlined-select-currency"
