@@ -63,7 +63,7 @@ const ProductDetail = () => {
     <div className="product-detail">
       <div>
         {product?.img ? (
-          <img src={product?.img} />
+          <img src={product?.img} className="product-detail-img"/>
         ) : (
           <Skeleton variant="rectangular" width={640} height={960} />
         )}

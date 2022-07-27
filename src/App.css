@@ -22,10 +22,11 @@
 
 .product-all div {
   max-width: 265px;
+  margin: 0 3px;
 }
 
 .product-card {
-  min-width: 400px;
+  /* min-width: 400px; */
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -259,6 +260,9 @@
     width: 150px;
     min-width: 100px;
     cursor: pointer;
+  }
+  .product-detail-img {
+    width: 300px;
   }
 }
 
