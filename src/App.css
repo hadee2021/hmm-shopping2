@@ -29,6 +29,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+  gap: 10px;
 }
 .product-card > img {
   width: 250px;
@@ -69,7 +70,7 @@
   margin-right: 30px;
   cursor: pointer;
 }
-.login-button > div:first-child,
+.user-div,
 .cart-span
 {
   margin: 0 5px;

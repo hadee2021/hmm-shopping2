@@ -43,7 +43,7 @@ const Navbar = () => {
       <div>
         <div className="login-button" onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} className="user-icon" />
-          <div>{authenticate ? "로그아웃" :"로그인"}</div>
+          <div className='user-div'>{authenticate ? "로그아웃" :"로그인"}</div>
           {authenticate && 
             <Link to="/cart" className="link-style cart-link-style"> 
               <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
