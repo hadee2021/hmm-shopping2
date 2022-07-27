@@ -6,7 +6,7 @@ import { authenticateAtom, cartAtom } from '../Atom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-import { Button } from '@mui/material'
+import { Button, Paper } from '@mui/material'
 
 const Cart = () => {
   const[authenticate, setAuthenticate] = useRecoilState(authenticateAtom)
@@ -49,18 +49,32 @@ const Cart = () => {
 
   return (
     <div className="cart-area">
-      {cart.map((item) => (
-        <div key={item.idTime} className="item-card"> 
-          <div onClick={() => moveToDetail(item.id)}>
-            <span>{item.title} {item.size}</span>
-          </div>
-          <div>{item.count}개</div>
-          <div>{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} 원</div>
-          <div onClick={() => deleteItem(item.idTime)}>
-            <FontAwesomeIcon icon={faXmark} />
-          </div>
-        </div>
-      ))}
+      <div className='item-card-container'>
+        {cart.map((item) => (
+          <Paper elevation={5} key={item.idTime} className="item-card-paper"> 
+            <div className="item-card">
+              <div>
+                <FontAwesomeIcon 
+                  icon={faXmark} 
+                  className="item-xmark" 
+                  onClick={() => deleteItem(item.idTime)}
+                />
+              </div>
+              <div>
+                <span 
+                  className='item-title' 
+                  onClick={() => moveToDetail(item.id)}
+                >
+                  {item.title} {item.size}
+                </span>
+              </div>
+              <div>{item.count}개</div>
+              <div>{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} 원</div>
+            </div>
+            
+          </Paper>
+        ))}
+      </div>
       <div className="total-price">
         총가격: <span>{totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span> 원
       </div>
