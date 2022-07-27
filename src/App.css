@@ -186,6 +186,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+  gap: 10px;
 }
 
 .item-card-container {
@@ -213,7 +214,11 @@
   justify-content: flex-end;
 }
 
-.item-title:hover {
+.item-card > div:nth-child(4) {
+  margin-bottom: 15px;
+}
+
+.item-title {
   font-weight: bolder;
   cursor: pointer;
 }

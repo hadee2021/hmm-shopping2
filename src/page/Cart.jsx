@@ -70,8 +70,13 @@ const Cart = () => {
               </div>
               <div>{item.count}개</div>
               <div>{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} 원</div>
+              <Button 
+                variant='contained' 
+                onClick={() => moveToDetail(item.id)}
+                >
+                상세보기
+              </Button>
             </div>
-            
           </Paper>
         ))}
       </div>
@@ -80,7 +85,7 @@ const Cart = () => {
       </div>
       <Button 
         variant='contained' 
-        sx={{mt:3, mb: 2}}
+        sx={{mt:3, mb: 2, width: 120, height: 50, fontSize: "18px"}}
         onClick={payment}
       >
         결제하기
