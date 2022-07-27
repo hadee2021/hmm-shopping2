@@ -1,14 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-// import { useRecoilState } from 'recoil'
-// import { loadingAtiom } from '../Atom'
-// import { Skeleton } from '@mui/material'
 
 const ProductCard = ({item}) => {
   const navigate = useNavigate()
   const showDetail = () => {
     navigate(`/product/${item.id}`)
   }
-  // const[loading] = useRecoilState(loadingAtiom)
+
   return (
     <div>
       <div className="product-card" onClick={showDetail}>

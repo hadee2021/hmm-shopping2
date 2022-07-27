@@ -3,10 +3,12 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
 import { useSearchParams } from 'react-router-dom'
+import ProductCardSkeleton from '../components/ProductCardSkeleton'
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([])
   const [query] = useSearchParams()
+  const [isLoading, setIsLoading] = useState(false)
 
   const getProducts = async () => {
     let searchQuery = query.get('q') || ''
@@ -14,6 +16,7 @@ const ProductAll = () => {
     let response = await fetch(url)
     let data = await response.json()
     setProductList(data)
+    setIsLoading(true)
   }
 
   useEffect(() => {
@@ -22,6 +25,7 @@ const ProductAll = () => {
 
   return (
     <div>
+      {isLoading ? (
       <div className="product-all-container">
         <div className="product-all">
           {productList.map((menu) => (
@@ -31,6 +35,9 @@ const ProductAll = () => {
           ))}
         </div>
       </div>
+      ) : (
+        <ProductCardSkeleton />
+      )}
     </div>
   )
 }
