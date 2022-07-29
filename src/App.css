@@ -26,7 +26,6 @@
 }
 
 .product-card {
-  /* min-width: 400px; */
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -267,11 +266,6 @@
   .nav-bar-padding {
     padding-bottom: 30px;
   }
-  /* .item-card div:first-child {
-    width: 150px;
-    min-width: 100px;
-    cursor: pointer;
-  } */
   .product-detail-img {
     width: 300px;
   }
